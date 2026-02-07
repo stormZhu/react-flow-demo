@@ -50,17 +50,22 @@ export default function Home() {
         <Button
           onClick={() => {
             setNodes((nodesSnapshot) => {
-              const changes: NodeChange[] = [
-                {
-                  type: "add" as const,
-                  item: {
+              // 获取当前节点
+              // 检查节点是否已存在
+              const nodeExists = nodesSnapshot.some((node) => node.id === "n1")
+              if (!nodeExists) {
+                // 添加新节点
+                const newNodes = [
+                  ...nodesSnapshot,
+                  {
                     id: "n1",
                     position: { x: 0, y: 0 },
                     data: { label: "Node 1" },
                   },
-                },
-              ]
-              return applyNodeChanges(changes, nodesSnapshot)
+                ]
+                return newNodes
+              }
+              return nodesSnapshot
             })
           }}
         >
