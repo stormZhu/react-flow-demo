@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# React Flow Demo
 
-## Getting Started
+这是一个基于 [React Flow](https://reactflow.dev/) 的流程图演示项目，使用 Next.js 框架构建。
 
-First, run the development server:
+## 功能特点
+
+- ✅ 基本的节点和边展示
+- ✅ 节点拖拽功能
+- ✅ 边的连接和编辑
+- ✅ 内置背景网格
+- ✅ 控制按钮（缩放、移动等）
+- ✅ 小地图预览
+
+## 技术栈
+
+- **框架**: Next.js 16.1.6
+- **语言**: TypeScript
+- **核心库**: @xyflow/react ^12.10.0
+- **状态管理**: Zustand ^5.0.11
+- **样式**: Tailwind CSS 4
+
+## 安装和运行
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 开发模式运行
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 构建生产版本
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 项目结构
 
-## Learn More
+```
+react-flow-demo/
+├── app/
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx       # 主要演示页面
+├── .gitignore
+├── README.md
+├── eslint.config.mjs
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+└── tsconfig.json
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 基本使用
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+项目已经配置了一个简单的流程图示例，包含两个节点和一条连接边。您可以：
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **拖拽节点**: 点击并拖动节点到任意位置
+2. **创建连接**: 从一个节点的输出端口拖拽到另一个节点的输入端口
+3. **删除连接**: 点击连接边，然后按 Delete 键
+4. **使用控制面板**: 顶部的控制面板可以缩放和平移视图
+5. **查看小地图**: 右下角的小地图显示整个流程图的概览
 
-## Deploy on Vercel
+## 扩展指南
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+要添加自定义节点或边，可以参考 [React Flow 官方文档](https://reactflow.dev/learn)。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 许可证
+
+MIT
